@@ -1,0 +1,271 @@
+.p-detail {
+    &1 {
+        padding-top: 150px;
+        padding-bottom: 100px;
+        background: #1c212e;
+        .c-title1 {
+            color: white;
+            margin-bottom: 20px;
+            @include breakpoint(tab) {
+                margin-top: 40px;
+            }
+        }
+        .c-title4 {
+            color: white;
+        }
+        .c-paragraph {
+            margin-bottom: 50px;
+        }
+        .c-btn {
+            height: 50px;
+            border-radius: 999px;
+            max-width: 100%;
+            width: 300px;
+            @include breakpoint(sp) {
+                width: 100%;
+            }
+        }
+        &__left {
+            padding-right: 40px;
+            @include breakpoint(tab) {
+                padding-right: unset;
+            }
+        }
+        &__right {
+            margin: 0 auto;
+            .gutter {
+                background-color: white;
+                padding: 20px;
+                border-radius: 5px;
+                @include breakpoint(tab) {
+                    padding: unset;
+                    padding-bottom: 20px;
+                }
+            }
+        }
+        &__cat {
+            margin-bottom: 20px;
+            p {
+                display: inline-block;
+            }
+            a {
+                color: $mainColor;
+                font-size: 1.4rem;
+                text-transform: capitalize;
+                position: relative;
+                margin-left: 7px;
+                &:not(:last-of-type) {
+                    &::after {
+                        content: ",";
+                        position: absolute;
+                        right: -4px;
+                        bottom: 0;
+                    }
+                }
+            }
+        }
+        &__image {
+            margin-bottom: 20px;
+            border-radius: 5px;
+
+            img {
+                width: 100%;
+                border-radius: 5px;
+            }
+        }
+        &__item {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            display: flex;
+            @include breakpoint(tab) {
+                padding-left: 15px;
+            }
+            b {
+                width: 50px;
+                margin-right: 10px;
+            }
+            span {
+                display: block;
+            }
+        }
+        &__action {
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            @include breakpoint(sp) {
+                justify-content: center;
+            }
+            .is-hover {
+                p {
+                    white-space: nowrap;
+                    display: none;
+                    font-size: 1.6rem;
+                    font-weight: bold;
+                    letter-spacing: 0.78px;
+                }
+            }
+            @media only screen and (min-width: 1000px) {
+                .is-hover {
+                    &:hover {
+                        border-radius: 999px;
+                        width: 300px;
+                        p {
+                            display: block;
+                        }
+                        svg {
+                            display: none;
+                        }
+                    }
+                }
+            }
+            .c-icon {
+                overflow: hidden;
+                margin-right: 20px;
+            }
+            .c-icon.c-icon--active {
+                color: #fff;
+                background-color: $mainColor;
+            }
+            button {
+                transition: all 0.6s;
+                outline: none;
+                border: none;
+                cursor: pointer;
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+        }
+        &__txt {
+            display: inline-block;
+            font-size: 1.3rem;
+            color: white;
+            letter-spacing: 0.72px;
+            @include breakpoint(sp) {
+                margin-top: 20px;
+            }
+        }
+    }
+    &2 {
+        background-color: #000;
+        width: 100%;
+        position: relative;
+        &__content {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            .l-container {
+                position: relative;
+            }
+            .c-title {
+                position: absolute;
+                top: 50px;
+                left: 0;
+                z-index: 99;
+                opacity: 0;
+                color: $mainColor;
+                transition: opacity 0.6s;
+            }
+            .c-btn--play {
+                width: 80px;
+                height: 80px;
+                font-size: 4rem;
+                opacity: 0;
+                pointer-events: none;
+                cursor: pointer;
+                border-width: 2px;
+            }
+            &:hover {
+                &.is-play {
+                    .c-icon--pause {
+                        opacity: 1;
+                        pointer-events: all;
+                    }
+                    .c-icon--play {
+                        opacity: 0;
+                        pointer-events: none;
+                    }
+                }
+                .c-title {
+                    opacity: 1;
+                }
+            }
+            &.is-pause {
+                .c-title {
+                    opacity: 1;
+                }
+                .c-icon--play {
+                    opacity: 1;
+                    pointer-events: all;
+                }
+                .c-icon--pause {
+                    opacity: 0;
+                    pointer-events: none;
+                }
+            }
+        }
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            cursor: pointer;
+        }
+    }
+    &3 {
+        padding-top: 70px;
+        padding-bottom: 70px;
+        background: $bgSmooth;
+        &__notlogin {
+            height: 450px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            p {
+                font-size: 1.6rem;
+                color: white;
+            }
+            a {
+                color: $mainColor;
+            }
+        }
+        &__box {
+            margin-top: 50px;
+            textarea {
+                width: 100%;
+                height: 170px;
+                resize: none;
+                border-radius: 10px;
+                padding: 20px;
+                font-size: 1.6rem;
+                color: #333;
+                letter-spacing: 0.72px;
+            }
+            button {
+                margin-top: 20px;
+                width: 300px;
+                height: 50px;
+                font-size: 1.4rem;
+                border-radius: 999px;
+                margin-left: auto;
+                margin-bottom: 70px;
+                @include breakpoint(sp) {
+                    width: 100%;
+                }
+            }
+        }
+        .c-btn--loadmore {
+            width: 300px;
+            height: 50px;
+            border-radius: 2px;
+            margin: 100px auto 0;
+        }
+    }
+    .p-top2 {
+        background: $bgBold;
+    }
+}

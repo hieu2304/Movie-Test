@@ -1,0 +1,5 @@
+export const GET_MOVIE_INFO = "GET_MOVIE_INFO";
+export const GET_TV_INFO = "GET_TV_INFO";
+export const GET_MOVIE_REQUEST = "GET_MOVIE_REQUEST";
+export const GET_MOVIE_REQUEST_FAIL = "GET_MOVIE_REQUEST_FAIL";
+export const RESET_ERROR = "RESET_ERROR";

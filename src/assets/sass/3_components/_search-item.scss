@@ -1,0 +1,79 @@
+.c-search-item {
+    color: rgba($color: #fff, $alpha: 0.8);
+    margin-bottom: 50px;
+    padding: 0 20px;
+    font-family: "Raleway", sans-serif;
+    @include breakpoint(tab) {
+        padding: 0 10px;
+    }
+    .gutter {
+        position: relative;
+    }
+    &__delete {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        color: white;
+        z-index: 2;
+        font-size: 1.8rem;
+        cursor: pointer;
+        &:hover {
+            color: $mainColor;
+        }
+    }
+    &__img {
+        height: 145px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        overflow: hidden;
+        @include breakpoint(pro) {
+            height: 135px;
+        }
+        @include breakpoint(tab) {
+            height: 150px;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &__name {
+        font-size: 1.8rem;
+        letter-spacing: 0.54px;
+        margin-bottom: 2px;
+    }
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.2rem;
+        color: rgba($color: #fff, $alpha: 0.6);
+    }
+    &__rated {
+    }
+    &__actor {
+    }
+    &__cat {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        margin-right: 35px;
+        font-size: 1.2rem;
+        background-color: rgba($color: #fff, $alpha: 0.8);
+        color: $mainColor;
+        padding: 2px 5px;
+        border-top-right-radius: 7px;
+        border-bottom-left-radius: 7px;
+        font-weight: 600;
+    }
+    &__release {
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+        font-style: italic;
+        color: rgba($color: #fff, $alpha: 0.6);
+    }
+    &__overview {
+        font-size: 1.3rem;
+        line-height: 1.4;
+    }
+}

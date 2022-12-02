@@ -1,0 +1,182 @@
+.c-addseason {
+    &__item {
+        display: flex;
+        position: relative;
+        &__img {
+            width: 200px;
+            height: auto;
+            max-height: 200px;
+            border-radius: 5px;
+        }
+        &__content {
+            width: 100%;
+            flex: 1;
+            display: flex;
+        }
+        &__group {
+            padding: 0 20px;
+            margin-bottom: 20px;
+            width: 100%;
+            input {
+            }
+        }
+        input,
+        textarea {
+            display: block;
+            height: 35px;
+            font-size: 1.5rem;
+            resize: none;
+            border-radius: 5px;
+            width: 100%;
+            padding: 10px;
+        }
+        textarea {
+            height: 150px;
+            overflow: scroll;
+        }
+        label {
+            display: block;
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        &__actions {
+        }
+    }
+}
+.show-tab-only {
+    display: none;
+    @include breakpoint(tab) {
+        display: block;
+    }
+}
+.c-popup2-season {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 2000;
+    background-color: rgba($color: #000, $alpha: 0.7);
+    display: flex;
+    padding: 80px 0;
+    opacity: 0;
+    pointer-events: none;
+
+    @include breakpoint(pro) {
+        padding: 100px 45px 80px;
+    }
+    @include breakpoint(tab) {
+        padding: 100px 15px 80px;
+    }
+    &__content {
+        height: 100%;
+        width: 100%;
+        background-color: #000;
+        color: white;
+        display: flex;
+        max-width: 1200px;
+
+        @include breakpoint(pro) {
+            max-width: unset;
+        }
+        @include breakpoint(tab) {
+            display: block;
+            overflow-y: auto;
+        }
+    }
+    &__left {
+        width: 150px;
+        padding: 50px 0 35px;
+        @include breakpoint(tab) {
+            display: none;
+        }
+        ul {
+            font-size: 1.6rem;
+            li {
+                display: block;
+                padding: 10px 25px 10px 35px;
+                cursor: pointer;
+                &.is-current {
+                    background-color: rgba($color: #252525, $alpha: 0.6);
+                    border: 1px solid #ddd;
+                }
+                &:hover {
+                    background-color: rgba($color: #252525, $alpha: 0.6);
+                }
+            }
+        }
+        overflow: hidden auto;
+    }
+    &__addnew {
+        display: flex;
+        padding: 5px 35px;
+        cursor: pointer;
+        &.is-current {
+            background-color: rgba($color: #252525, $alpha: 0.6);
+            border: 1px solid #ddd;
+        }
+        &:hover {
+            background-color: rgba($color: #252525, $alpha: 0.6);
+        }
+        span {
+            padding-right: 5px;
+        }
+    }
+    &__left &__title {
+        padding-left: 35px;
+    }
+    &__title {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        @include breakpoint(tab) {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+        }
+    }
+    &__top {
+        margin-bottom: 30px;
+    }
+    &__right {
+        padding: 50px 35px 40px 10px;
+        overflow: auto;
+        width: calc(100% - 150px);
+        @include breakpoint(tab) {
+            width: 100%;
+            padding: unset;
+        }
+        .c-form {
+            margin: unset;
+            padding: unset;
+            width: 100%;
+            @include breakpoint(sp) {
+                .row {
+                    margin-left: 0;
+                    margin-right: 0;
+                }
+            }
+            textarea {
+                height: 150px;
+                resize: none;
+            }
+        }
+    }
+    &__actions {
+        display: flex;
+        @include breakpoint(tab) {
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .c-btn {
+            min-width: 80px;
+            width: auto;
+            margin-right: 20px;
+            padding: 0 20px;
+            margin-top: unset;
+            @include breakpoint(tab) {
+                width: 45%;
+                margin-right: unset;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}

@@ -1,0 +1,72 @@
+.p-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    z-index: 99999;
+    background: rgba($color: #000000, $alpha: 0.7);
+    overflow: auto;
+    display: none;
+    &__season {
+        font-size: 1.8rem;
+        padding: 5px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        color: #333;
+        @include breakpoint(tab) {
+            font-size: 1.6rem;
+        }
+    }
+    &__title {
+        text-align: center;
+        text-transform: capitalize;
+        margin-bottom: 30px;
+        font-size: 3rem;
+        font-weight: 600;
+
+        @include breakpoint(tab) {
+            font-size: 1.8rem;
+        }
+    }
+    &__subtitle {
+        font-size: 1.6rem;
+        font-weight: bold;
+
+        @include breakpoint(tab) {
+            font-size: 1.4rem;
+        }
+    }
+    &__content {
+        padding: 30px 50px;
+        width: 1000px;
+        background-color: $bgSmooth;
+        margin: 40px auto;
+        position: relative;
+        border-radius: 10px;
+        min-height: calc(100vh - 80px);
+        @include breakpoint(pro) {
+            width: calc(100% - 70px);
+        }
+        @include breakpoint(tab) {
+            width: calc(100% - 30px);
+            padding: 40px 15px;
+        }
+        .c-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            svg {
+                cursor: pointer;
+                font-size: 3rem;
+                color: white;
+                @include breakpoint(tab) {
+                    font-size: 2rem;
+                }
+                &:hover {
+                    opacity: 0.7;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,65 @@
+.c-comment {
+    display: flex;
+    margin-top: 50px;
+    position: relative;
+    &__image {
+        width: 80px;
+        height: 80px;
+        display: block;
+        border-radius: 50%;
+        overflow: hidden;
+        background-color: #ddd;
+        @include breakpoint(tab) {
+            width: 60px;
+            height: 60px;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &__info {
+        width: calc(100% - 80px);
+        padding-left: 20px;
+        padding-top: 15px;
+        @include breakpoint(tab) {
+            padding-top: 5px;
+            padding-left: 15px;
+        }
+    }
+    &__name {
+        font-size: 1.8rem;
+        color: $mainColor;
+        padding-right: 15px;
+        @include breakpoint(tab) {
+            font-size: 1.6rem;
+        }
+    }
+    &__delete {
+        position: absolute;
+        top: 5px;
+        right: 0px;
+        color: white;
+        font-size: 1.8rem;
+        cursor: pointer;
+    }
+    &__date {
+        display: block;
+        margin-top: 5px;
+        font-size: 1.3rem;
+        letter-spacing: 0.54px;
+        color: #ddd;
+        font-style: italic;
+    }
+    &__text {
+        font-size: 1.6rem;
+        color: white;
+        margin-top: 10px;
+        line-height: 1.8;
+        @include breakpoint(tab) {
+            font-size: 1.4rem;
+            margin-top: 5px;
+        }
+    }
+}

@@ -1,0 +1,93 @@
+.p-watch {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    .c-watch-controller {
+        position: absolute;
+        top: 50%;
+        right: 30px;
+        transform: translateY(-50%);
+        z-index: 2;
+        opacity: 0;
+        opacity: 1;
+        transition: opacity 0.6s;
+        @include breakpoint(tab) {
+            top: 30px;
+            transform: none;
+        }
+        &__icon {
+            border-radius: 5px;
+            color: #00b3ff;
+            cursor: pointer;
+        }
+        &:hover {
+            opacity: 1 !important;
+        }
+    }
+    .plyr {
+        height: 100%;
+        width: 100%;
+    }
+
+    &__back {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        color: white;
+        opacity: 1;
+        transition: opacity 0.6s;
+        span {
+            font-size: 3rem;
+            display: block;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+        p {
+            font-size: 1.6rem;
+            opacity: 0;
+            transition: opacity 0.6s;
+        }
+        &:hover {
+            opacity: 1 !important;
+            p {
+                opacity: 1;
+            }
+        }
+    }
+    .plyr--hide-controls ~ &__back {
+        opacity: 0;
+    }
+    .plyr--hide-controls ~ .c-watch-controller {
+        opacity: 0;
+    }
+}
+.plyr--loading {
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(0deg);
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        border-width: 3px;
+        border-style: solid;
+        border-color: #00b3ff #00b3ff #00b3ff transparent;
+        animation: rotate1 4s infinite linear;
+    }
+}
+
+@keyframes rotate1 {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}

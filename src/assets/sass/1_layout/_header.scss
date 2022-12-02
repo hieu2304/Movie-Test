@@ -1,0 +1,141 @@
+.p-header {
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    transition: background-color 0.5s;
+    &.is-dark {
+        background-color: #131722;
+        @include breakpoint(tab) {
+            background-color: transparent;
+        }
+        &-2 {
+            background-color: $bgSmooth;
+        }
+    }
+    &__content {
+        padding: 15px 50px;
+        min-height: 70px;
+        @include breakpoint(tab) {
+            padding: 15px 0 15px 15px;
+        }
+    }
+    &__logo {
+        width: 60px;
+        img {
+            width: 100%;
+            height: auto;
+            max-height: 100%;
+            object-fit: cover;
+        }
+    }
+    &__cgnav {
+        @include breakpoint(pro) {
+            display: none !important;
+        }
+        li {
+            margin: 0 20px;
+            a {
+                font-size: 1.6rem;
+                font-weight: bold;
+                color: white;
+                transition: all 0.6s;
+                position: relative;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: -2px;
+                    left: 0;
+                    width: 0%;
+                    height: 2px;
+                    background-color: $mainColor;
+                }
+                &:hover {
+                    color: $mainColor;
+                    &::after {
+                        transition: all 0.6s;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    &__actions {
+        pointer-events: all;
+        @include breakpoint(pro) {
+            display: none !important;
+        }
+        p {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: white;
+            transition: all 0.6s;
+            position: relative;
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: -2px;
+                left: 0;
+                width: 0%;
+                height: 2px;
+                background-color: $mainColor;
+                transition: all 0.6s;
+            }
+        }
+        &--icon {
+            color: white;
+            font-size: 1.8rem;
+            margin-right: 20px;
+            &:hover {
+                color: $mainColor;
+            }
+        }
+    }
+
+    .icon-circle {
+        width: 40px;
+        height: 40px;
+        border: 2px solid white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 10px;
+        svg {
+            font-size: 1.8rem;
+            color: white;
+            &:hover {
+                color: $mainColor;
+            }
+        }
+    }
+    &__account {
+        margin-left: 15px;
+        &:hover {
+            transition: all 0.6s;
+            p {
+                color: $mainColor;
+                &::after {
+                    width: 100%;
+                }
+            }
+            .icon-circle {
+                border-color: $mainColor;
+            }
+            svg {
+                color: $mainColor;
+            }
+        }
+    }
+}
+.tab-only {
+    display: none;
+    @include breakpoint(pro) {
+        display: block;
+    }
+    @include breakpoint(sp) {
+        display: none;
+    }
+}

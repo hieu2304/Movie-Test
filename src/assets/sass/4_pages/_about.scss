@@ -1,0 +1,50 @@
+.p-about {
+    min-height: 100vh;
+    background-color: $bgBold;
+    padding: 150px 0 100px;
+    @include breakpoint(pro) {
+        padding: 100px 0;
+    }
+    @include breakpoint(tab) {
+        padding: 100px 0;
+    }
+    @include breakpoint(sp) {
+        padding: 100px 0;
+    }
+    &__title {
+        margin-bottom: 50px;
+        @include breakpoint(tab) {
+            font-size: 3.8rem;
+            padding-left: 10px;
+        }
+        @include breakpoint(sp) {
+            padding-left: 0;
+        }
+    }
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-left: -10px;
+        margin-right: -10px;
+        @include breakpoint(tab) {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+    &__item {
+        width: calc(100% / 5);
+        padding: 0 10px;
+        margin-bottom: 20px;
+        @include breakpoint(pro) {
+            width: calc(100% / 3);
+        }
+        @include breakpoint(tab) {
+            width: calc(100% / 2);
+        }
+        @include breakpoint(sp) {
+            width: 100%;
+            padding: unset;
+        }
+    }
+}

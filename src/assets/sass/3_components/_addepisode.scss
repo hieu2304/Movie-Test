@@ -1,0 +1,13 @@
+.c-episode__img {
+    width: 300px;
+    height: 270px;
+    background-color: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}

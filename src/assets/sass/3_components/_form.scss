@@ -1,0 +1,148 @@
+.c-form {
+    width: 600px;
+    margin: 0 auto;
+    padding: 30px 40px;
+    background: rgba($color: #000000, $alpha: 0.4);
+    position: relative;
+    z-index: 1;
+    border-radius: 5px;
+    .row {
+        margin-right: -5px;
+        margin-left: -5px;
+    }
+    div[class^="col-"] {
+        position: relative;
+        padding: 0 5px;
+    }
+
+    @include breakpoint(tab) {
+        width: 100%;
+    }
+    @include breakpoint(sp) {
+        padding: 30px 20px;
+    }
+    &__title {
+        margin-bottom: 30px;
+        font-size: 3.6rem;
+        color: #fff;
+    }
+    &__title-mid {
+        align-self: center;
+        text-align: center;
+    }
+    &__text {
+        margin-bottom: 30px;
+        font-size: 2.5rem;
+        color: #fff;
+    }
+    &__group {
+        height: 50px;
+        width: 100%;
+        margin-bottom: 20px;
+        background: #333;
+        position: relative;
+        &.is-focus label {
+            font-size: 1.2rem;
+            top: 12px;
+        }
+    }
+    &__label {
+        display: block;
+        font-size: 1.6rem;
+        color: #8c8c8c;
+        position: absolute;
+        transition: all 0.2s;
+        top: 20px;
+        left: 20px;
+        transform: translateY(-50%);
+        pointer-events: none;
+        @include breakpoint(tab) {
+            font-size: 1.2rem;
+        }
+    }
+    &__input {
+        height: 50px;
+        width: 100%;
+        padding: 20px 20px 2px;
+        border-radius: 2px;
+        outline: none;
+        border: none;
+        background: transparent;
+        font-weight: 600;
+        font-size: 1.7rem;
+        letter-spacing: 0.72px;
+        color: #f1f1f1;
+    }
+    &__btn {
+        display: inline-block;
+        height: 50px;
+        line-height: 50px;
+        padding: 0 20px;
+        color: #f1f1f1;
+        background: transparent;
+        font-weight: 600;
+        font-size: 1.5rem;
+        letter-spacing: 0.72px;
+        color: #f1f1f1;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: #11698e;
+    }
+    &__input:focus + &__label {
+        font-size: 1.2rem;
+        top: 12px !important;
+    }
+    &__input:valid + &__label {
+        font-size: 1.2rem;
+        top: 12px !important;
+    }
+    &__input:read-only + &__label {
+        font-size: 1.2rem;
+        top: 12px !important;
+    }
+    &__input_date {
+        height: 50px;
+        width: 100%;
+        padding: 20px 20px 2px;
+        border-radius: 2px;
+        outline: none;
+        border: none;
+        background: transparent;
+        font-weight: 600;
+        font-size: 1.8rem;
+        letter-spacing: 0.72px;
+        color: #f1f1f1;
+    }
+    &__below {
+        display: block;
+        a {
+            font-size: 1.6rem;
+            color: white;
+            margin-left: auto;
+            margin-top: 20px;
+            display: block;
+            text-align: right;
+            transition: all 0.2s;
+
+            @include breakpoint(tab) {
+                margin-top: 10px;
+                font-size: 1.4rem;
+            }
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    &__warning {
+        display: block;
+        font-size: 1.2rem;
+        color: orangered;
+        padding-bottom: 20px;
+        margin-top: -15px;
+    }
+    .c-btn {
+        width: 100%;
+        height: 50px;
+        margin-top: 30px;
+    }
+}

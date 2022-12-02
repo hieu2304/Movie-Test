@@ -1,0 +1,875 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;900&display=swap");
+
+$topHeight: 100px;
+.p-admin {
+    font-family: "Raleway", sans-serif;
+    overflow: hidden;
+    padding-bottom: 100px;
+    background-color: $bgBold;
+    display: flex;
+    flex-direction: column;
+    padding: 150px 0 100px;
+
+    @include breakpoint(pro) {
+        padding: 100px 0;
+    }
+    @include breakpoint(tab) {
+        padding: 100px 0;
+    }
+    @include breakpoint(sp) {
+        padding: 100px 0;
+    }
+
+    .c-btn {
+        background-color: transparent;
+        font-size: 1.5rem;
+        color: #fff;
+        height: 25px;
+        border: 1px solid #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 150px;
+        border-radius: 2px;
+        cursor: pointer;
+        transition: background-color 1.5s ease;
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+    &__top {
+        height: $topHeight;
+        margin-bottom: 50px;
+        margin-top: 50px;
+        &__item {
+            position: relative;
+            border-radius: 2px !important;
+            &:not(:last-child) {
+                margin-right: 30px;
+            }
+            &--dropdown {
+                padding: 0 10px;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: space-between !important;
+            }
+            .p-adamin__top__down {
+                font-size: 1.1rem;
+            }
+        }
+        &__option {
+            opacity: 0;
+            pointer-events: none;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            min-width: 100%;
+            width: max-content;
+            transform: translateY(100%);
+            padding: 5px 0;
+            color: #333;
+            ul {
+                border-radius: 2px;
+                background-color: #fff;
+                width: 100%;
+                padding: 0 20px;
+            }
+            li {
+                padding: 10px 0;
+            }
+            &.is-open {
+                opacity: 1;
+                pointer-events: all;
+            }
+        }
+    }
+    &__toggle {
+        color: #fff;
+        cursor: pointer;
+        height: $topHeight;
+        display: inline-flex;
+        align-items: center;
+
+        svg {
+            width: 25px;
+            height: 25px;
+        }
+        path {
+            fill: #fff;
+        }
+    }
+    &__bottom {
+        flex: 1;
+        height: 100%;
+    }
+}
+.c-option {
+    display: flex;
+    margin-bottom: 50px;
+
+    &__number {
+        font-size: 2rem;
+        margin-right: 20px;
+        color: #fff;
+        margin-top: 2px;
+        display: block;
+        @include breakpoint(pro) {
+            margin-top: 10px;
+            font-size: 3rem;
+        }
+        @include breakpoint(tab) {
+            margin-top: 2px;
+            font-size: 2rem;
+        }
+    }
+    &__text {
+        // overflow: hidden;
+        font-size: 6rem;
+        font-weight: bolder;
+        position: relative;
+        white-space: nowrap;
+        color: rgba($color: #131722, $alpha: 0.5);
+        opacity: 1 !important;
+        outline: none;
+        padding: 0;
+        background: transparent;
+        overflow: hidden;
+        line-height: 1;
+        &::before {
+            content: attr(data-title);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            color: #fff;
+            transition: width 1s;
+        }
+        @include breakpoint(pro) {
+            font-size: 10rem;
+        }
+        @include breakpoint(tab) {
+            font-size: 7rem;
+        }
+        @include breakpoint(sp) {
+            font-size: 5rem;
+        }
+        &:hover {
+            &::before {
+                width: 100%;
+            }
+        }
+    }
+}
+.c-panel {
+    background-color: #2c313f;
+    font-family: "Raleway", sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    transition: left 1s ease;
+    z-index: 9999;
+    .u-flex {
+        height: 100%;
+    }
+    &__close {
+        width: 45px;
+        height: 45px;
+        padding: 10px;
+        margin-left: -10px;
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+        path {
+            fill: #fff;
+        }
+        margin-bottom: 100px;
+        cursor: pointer;
+        text-align: left;
+    }
+    &__content {
+        width: 52%;
+        padding-left: 100px;
+        padding-top: 100px;
+        @include breakpoint(pro) {
+            width: 100%;
+            text-align: center;
+            padding: 0 70px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        @include breakpoint(tab) {
+            padding: 0 45px;
+        }
+    }
+    &__bg {
+        flex: 1;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &.is-open {
+        left: 0;
+        pointer-events: all;
+    }
+}
+.c-view {
+    background-color: #212028;
+    overflow: hidden;
+    width: 100%;
+    padding: 20px 20px;
+    border-radius: 5px;
+    margin-bottom: 50px;
+    @include breakpoint(pro) {
+        padding: 20px 15px;
+    }
+    &__title {
+        display: flex;
+        color: #fff;
+        border-bottom: 1px solid #33313e;
+        align-items: center;
+        padding-bottom: 20px;
+
+        h3 {
+            font-size: 1.8rem;
+        }
+        .c-btn {
+            margin-left: auto;
+            font-size: 1.5rem;
+            color: #fff;
+            height: 25px;
+            border: 1px solid #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-width: 150px;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: background-color 1.5s ease;
+            &:hover {
+                background-color: #fff;
+                color: #333;
+            }
+        }
+    }
+    &__table {
+        overflow-x: auto;
+        margin-bottom: 10px;
+        /* width */
+        &::-webkit-scrollbar {
+            width: 10px;
+            height: 4px;
+            cursor: pointer;
+        }
+
+        /* Track */
+        &::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+            background: #888;
+        }
+
+        /* Handle on hover */
+        &::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    }
+    table {
+        min-width: 1000px;
+        border-collapse: collapse;
+        width: 100%;
+
+        thead {
+            border-bottom: 1px solid #33313e;
+
+            th {
+                padding: 12px 10px;
+                color: #909094;
+                font-weight: lighter;
+                font-size: 1.5rem;
+                text-align: left;
+                &.t-center {
+                    text-align: center;
+                }
+            }
+        }
+        tr {
+            td {
+                padding: 5px 10px;
+                min-height: 50px;
+                font-size: 1.4rem;
+                letter-spacing: 0.64px;
+                line-height: 1.5;
+                vertical-align: middle;
+                color: #fff;
+                &.t-center {
+                    text-align: center;
+                }
+                &.c-view__hidden {
+                    color: #e97878;
+                }
+                &.c-view__publish {
+                    color: #11698e;
+                }
+            }
+        }
+    }
+    &__paginate {
+        display: flex;
+        justify-content: flex-end;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #909094;
+        padding: 0 10px;
+    }
+
+    &__prev {
+        margin-right: 5px;
+        cursor: pointer;
+    }
+    &__next {
+        margin-left: 5px;
+        cursor: pointer;
+    }
+    &__current {
+        padding: 0 5px;
+    }
+    &__total {
+        padding: 0 5px;
+    }
+    &__edit {
+        background-color: #11698e;
+        margin-right: 10px;
+    }
+    &__del {
+        background-color: #e97878;
+    }
+    &__option {
+        min-width: 130px;
+        display: flex;
+        align-items: center;
+
+        button {
+            flex: 1;
+            color: #fff;
+            display: inline-block;
+            height: 30px;
+            min-width: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            span {
+                display: inline-block;
+                margin-right: 5px;
+            }
+        }
+    }
+}
+
+.a-center {
+    align-items: center;
+}
+.t-center {
+    text-align: center;
+}
+
+.c-popup-searchfilm {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: #000000, $alpha: 0.7);
+    z-index: 1000;
+    padding: 80px 0;
+    // opacity: 0;
+    // pointer-events: none;
+    transition: opacity 0.6s;
+    @include breakpoint(pro) {
+        padding: 100px 45px 80px;
+    }
+    @include breakpoint(tab) {
+        padding: 100px 15px 80px;
+    }
+    .l-container {
+        background-color: #1a191f;
+        // height: 100%;
+        border-radius: 5px;
+        position: relative;
+        // top: -120%;
+        top: 0;
+        transition-delay: 0.6s;
+        transition: all 0.6s;
+        padding: 70px 50px 50px;
+        @include breakpoint(tab) {
+            padding: 70px 25px 50px;
+        }
+    }
+    &.is-open {
+        pointer-events: all;
+        opacity: 1;
+        .l-container {
+            top: 0;
+        }
+    }
+}
+
+.c-search {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    font-family: "Raleway", sans-serif;
+    height: 100%;
+    &__box {
+        form {
+            border-radius: 4px;
+            background-color: #f9f5f4;
+            display: flex;
+            padding-right: 5px;
+            width: 100%;
+            height: 40px;
+            input {
+                flex: 1;
+                height: 100%;
+                border: none;
+                outline: none;
+                background: transparent;
+            }
+        }
+        &__icon {
+            cursor: pointer;
+            span {
+                height: 100%;
+                width: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                svg {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+    &__content {
+        color: white;
+        font-size: 1.6rem;
+        overflow: auto;
+        flex: 1;
+        margin: 20px 0;
+        @include breakpoint(sp) {
+            font-size: 1.4rem;
+        }
+        &::-webkit-scrollbar {
+            width: 5px;
+            cursor: pointer;
+        }
+
+        /* Track */
+        &::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+            background: #888;
+        }
+
+        /* Handle on hover */
+        &::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    }
+
+    &__item {
+        cursor: pointer;
+        margin: 0 20px;
+        padding: 20px;
+        display: flex;
+        margin-bottom: 30px;
+        border-radius: 8px;
+        background: #1a191f;
+        box-shadow: 10px 10px 16px #16151a, -10px -10px 16px #1e1d24;
+        @include breakpoint(tab) {
+            margin: 0 10px 30px;
+            padding: 20px;
+        }
+        @include breakpoint(sp) {
+            flex-direction: column;
+            padding: 20px 10px;
+        }
+    }
+    &__img {
+        width: 200px;
+        height: 150px;
+        margin-right: 20px;
+        @include breakpoint(tab) {
+            width: 150px;
+        }
+        @include breakpoint(sp) {
+            margin-bottom: 10px;
+            margin-right: unset;
+            width: 100%;
+        }
+        img {
+            border-radius: 4px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &__info {
+        &__name {
+            font-size: 1.8rem;
+            letter-spacing: 0.54px;
+            margin-bottom: 5px;
+            @include breakpoint(tab) {
+                font-size: 1.6rem;
+            }
+        }
+        &__cat {
+            font-size: 1.4rem;
+            opacity: 0.8;
+            margin-bottom: 20px;
+            @include breakpoint(tab) {
+                font-size: 1.2rem;
+            }
+        }
+        &__bottom {
+            font-size: 1.4rem;
+            @include breakpoint(tab) {
+                font-size: 1.2rem;
+            }
+            span {
+                display: inline-block;
+                letter-spacing: 0.54px;
+            }
+        }
+        &__minutes {
+            margin-right: 20px;
+        }
+    }
+}
+.c-addfilm {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden auto;
+    input,
+    textarea {
+        font-size: 1.5rem;
+    }
+    @include breakpoint(sp) {
+        display: block;
+    }
+    &__upload {
+        position: relative;
+        .c-form__input {
+            padding-right: 50px;
+        }
+    }
+    &__link {
+        position: absolute;
+        background-color: transparent;
+        color: white;
+        height: 50px;
+        width: 50px;
+        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.6rem;
+        opacity: 0.8;
+        top: 0;
+        right: 0;
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    &__slick {
+        margin-top: 20px;
+        margin-left: -5px;
+        margin-right: -5px;
+        .slick-arrow {
+            text-indent: -9999px;
+            white-space: nowrap;
+            background-color: rgba($color: #000000, $alpha: 0.3);
+            width: 15px;
+            height: 15px;
+        }
+        .slick-arrow.slick-prev {
+            left: 8px;
+            background: url("../img/icons/prev@2x.png") no-repeat center/cover;
+        }
+        .slick-arrow.slick-next {
+            right: 8px;
+            background: url("../img/icons/next@2x.png") no-repeat center/cover;
+        }
+    }
+    &__slick &__select--img {
+        height: 100px;
+        img {
+            padding: 0 5px;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    &__img {
+        width: 100%;
+        height: 400px;
+        @include breakpoint(pro) {
+            height: 350px;
+        }
+        @include breakpoint(tab) {
+            height: 300px;
+        }
+    }
+    &__poster {
+        width: 300px;
+
+        margin-right: 50px;
+        border-radius: 4px;
+        // overflow: hidden;
+        @include breakpoint(pro) {
+            width: 250px;
+        }
+        @include breakpoint(tab) {
+            width: 200px;
+            margin-right: 25px;
+            margin-bottom: 25px;
+        }
+        @include breakpoint(sp) {
+            width: 100%;
+            height: auto;
+            max-height: 100%;
+            margin-right: unset;
+            margin-bottom: 25px;
+        }
+    }
+    &__info {
+        flex: 1;
+        padding-top: 20px;
+        overflow: hidden auto;
+        height: 100%;
+        min-width: 400px;
+        margin-right: 20px;
+        @include breakpoint(sp) {
+            padding-top: 0;
+            min-width: unset;
+            overflow: unset;
+            margin-right: unset;
+        }
+    }
+    &__handle {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 40px;
+    }
+
+    .c-btn {
+        margin-top: 10px;
+        height: 50px;
+        border: 2px solid #fff;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 150px;
+        color: white;
+        font-size: 1.6rem;
+        opacity: 0.8;
+        background-color: transparent;
+        cursor: pointer;
+        border-radius: 5px;
+        &:nth-child(1) {
+            margin-right: 20px;
+            @include breakpoint(sp) {
+                margin-right: unset;
+            }
+        }
+        @include breakpoint(tab) {
+            width: calc(50% - 30px);
+            min-width: 150px;
+        }
+        @include breakpoint(sp) {
+            width: 100%;
+        }
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+    .c-btn-2 {
+        margin-right: 20px;
+        @include breakpoint(sp) {
+            margin-right: unset;
+        }
+    }
+    &__type {
+        display: flex;
+        flex-wrap: wrap;
+        color: #fff;
+        font-size: 1.6rem;
+        opacity: 0.8;
+        > span {
+            display: block;
+            margin-right: 20px;
+            margin-bottom: 10px;
+            @include breakpoint(sp) {
+                margin-right: 10px;
+            }
+        }
+        input {
+            // pointer-events: none;
+            cursor: not-allowed;
+        }
+        &__item {
+            display: flex;
+            &:not(:last-child) {
+                margin-right: 20px;
+                @include breakpoint(sp) {
+                    margin-right: 10px;
+                }
+            }
+            .c-radio {
+                margin-right: 10px;
+            }
+        }
+    }
+    &__video {
+        width: 100%;
+        background-color: #212028;
+        height: 45px;
+        input {
+            height: 100%;
+            width: 100%;
+            background: transparent;
+            color: white;
+            padding-left: 20px;
+        }
+    }
+    input:read-only,
+    textarea:read-only {
+        position: relative;
+        cursor: not-allowed;
+    }
+    &__item {
+        margin-bottom: 25px;
+        width: 100%;
+        height: 45px;
+        position: relative;
+        color: #fff;
+        font-size: 1.6rem;
+        padding: 0 20px;
+        .gutter {
+            background-color: #212028;
+            height: 100%;
+            width: 100%;
+            position: relative;
+            border-radius: 4px;
+        }
+        &--big {
+            height: 135px;
+        }
+        span {
+            font-size: 1.4rem;
+            position: absolute;
+            left: 20px;
+            top: 0;
+            transform: translateY(-50%);
+            opacity: 0.8;
+        }
+        input,
+        textarea {
+            height: 100%;
+            width: 100%;
+            padding: 15px 20px;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            color: white;
+            text-align: left;
+            resize: none;
+            font-size: 1.6rem;
+            font-family: "Raleway", sans-serif;
+        }
+    }
+    .c-form {
+        width: unset;
+        background-color: transparent;
+        padding: unset;
+        .row {
+            margin-left: -15px;
+            margin-right: -15px;
+            div[class^="col-"] {
+                background: transparent;
+                padding-left: 15px;
+                padding-right: 15px;
+                @include breakpoint(sp) {
+                    padding-right: unset;
+                }
+            }
+            .gutter {
+                background-color: #212028;
+            }
+            textarea {
+                height: 150px;
+                resize: none;
+                padding-top: 22px;
+            }
+            label {
+                top: 25px;
+            }
+        }
+    }
+}
+.c-popup2-search .c-popup2__content {
+    top: -150%;
+}
+.c-popup2-search.is-open .c-popup2__content {
+    top: 0;
+}
+.c-popup2-addfilm .c-popup2__content {
+    right: -150%;
+    padding-right: 30px;
+    @include breakpoint(pro) {
+        width: 100%;
+        padding-right: 15px;
+    }
+    @include breakpoint(tab) {
+        padding-right: 5px;
+    }
+    @include breakpoint(sp) {
+        padding-right: 15px;
+    }
+}
+.c-popup2-addfilm.is-open .c-popup2__content {
+    right: 0;
+}
+
+$col: 12;
+
+.c-radio {
+    display: inline-block;
+    position: relative;
+    height: 15px;
+    width: 15px;
+    border: 1px solid #ddd;
+    cursor: not-allowed;
+    &.is-check {
+        background-color: #2788ff;
+    }
+}

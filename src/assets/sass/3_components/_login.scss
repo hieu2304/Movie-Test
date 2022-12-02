@@ -1,0 +1,32 @@
+.login {
+    background: url(../img/login-background.jpg) no-repeat center/cover fixed;
+    height: 100vh;
+    width: 100%;
+    padding: 150px 0 100px;
+    @include breakpoint(pro) {
+        padding: 100px 0;
+    }
+    @include breakpoint(tab) {
+        padding: 100px 0;
+    }
+    @include breakpoint(sp) {
+        padding: 100px 0;
+    }
+    position: relative;
+    &__content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba($color: #000000, $alpha: 0.7);
+    }
+}

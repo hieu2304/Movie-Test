@@ -1,0 +1,380 @@
+.infouser {
+    background: url(../img/login-background.jpg) no-repeat center/cover fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+    width: 100%;
+    padding: 150px 0 100px;
+    &__loading {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        background-color: $bgSmooth;
+        span {
+            color: #fff;
+            font-size: 3rem;
+        }
+    }
+    @include breakpoint(pro) {
+        padding: 150px 0 80px;
+    }
+    @include breakpoint(tab) {
+        padding: 120px 0 70px;
+    }
+    position: relative;
+
+    &__content {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        @include breakpoint(tab) {
+            flex-wrap: wrap;
+        }
+    }
+    .content_form {
+        box-shadow: rgba(0, 0, 0, 0.7) 0px 60px 40px -7px;
+        width: 1000px;
+        padding: 100px 50px;
+        border-radius: 20px;
+        background-image: url("../img/background-Huy.jpg");
+        position: relative;
+        @include breakpoint(pro) {
+            width: 900px;
+            max-width: calc(100% - 100px);
+        }
+        @include breakpoint(tab) {
+            width: 90%;
+            padding: 80px 45px;
+            max-width: unset;
+            border-radius: 10px;
+        }
+        @include breakpoint(sp) {
+            width: calc(100% - 30px);
+            padding: 40px 15px;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba($color: black, $alpha: 0.5);
+            border-radius: 20px;
+            @include breakpoint(tab) {
+                border-radius: 10px;
+            }
+        }
+        &__title {
+            // margin-left: 5px;
+            // margin-bottom: 10px;
+            font-size: 2.6rem;
+            color: #fff;
+            @include breakpoint(tab) {
+                font-size: 2.2rem;
+            }
+            @include breakpoint(sp) {
+                font-size: 2rem;
+            }
+        }
+        &__son {
+            margin-left: 5px;
+            margin-top: 5px;
+            font-size: 1.6rem;
+            color: #d3d3d3;
+            @include breakpoint(tab) {
+                font-size: 1.2rem;
+            }
+            @include breakpoint(sp) {
+                font-size: 1rem;
+            }
+        }
+    }
+    .index_form {
+        display: flex;
+        justify-content: space-evenly;
+        position: relative;
+        z-index: 1;
+        @include breakpoint(tab) {
+            flex-direction: column;
+        }
+    }
+    .title_form {
+        margin-bottom: 50px;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        z-index: 1;
+        @include breakpoint(tab) {
+            margin-bottom: 45px;
+        }
+        @include breakpoint(sp) {
+            margin-bottom: 30px;
+        }
+        &__left {
+            @include breakpoint(sp) {
+                font-size: 1rem;
+            }
+        }
+    }
+    .x-btn {
+        border: none;
+        overflow: hidden;
+        transition: width 0.8s ease;
+        height: 30px;
+        width: 30px;
+        background-color: $bgBold;
+        border-radius: 999px;
+        @include breakpoint(sp) {
+            height: 25px;
+            width: 25px;
+        }
+        p {
+            border-radius: 50%;
+            background-color: $bgBold;
+            color: white;
+            font-size: 1.2rem;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            @include breakpoint(sp) {
+                width: 25px;
+                height: 25px;
+                line-height: 25px;
+            }
+        }
+        span {
+            display: none;
+            white-space: nowrap;
+            font-size: 1.3rem;
+            @include breakpoint(tab) {
+                font-size: 1.1rem;
+            }
+            @include breakpoint(tab) {
+                font-size: 0.8rem;
+            }
+        }
+        &:hover {
+            width: 200px;
+
+            @include breakpoint(tab) {
+                width: 150px;
+            }
+            @include breakpoint(sp) {
+                width: 25px;
+            }
+            p {
+                display: none;
+                @include breakpoint(sp) {
+                    display: block;
+                }
+            }
+            span {
+                // transition: width 0.6s ease;
+                display: block;
+                @include breakpoint(sp) {
+                    display: none;
+                }
+            }
+        }
+    }
+    &__left {
+        width: 330px;
+        height: 330px;
+
+        input {
+            display: none;
+        }
+        p {
+            text-align: center;
+            top: 20%;
+            left: 8%;
+            padding-top: 1px;
+            position: absolute;
+            width: 20%;
+            height: 5%;
+            border-radius: 30px / 30px;
+            background-color: #ff0000;
+            display: none;
+            font-size: medium;
+            color: #fff;
+        }
+        &:hover {
+            p {
+                display: block;
+            }
+        }
+        @include breakpoint(pro) {
+            width: 275px;
+            height: 275px;
+        }
+        @include breakpoint(tab) {
+            width: 280px;
+            height: 280px;
+            margin: 0 auto 20px;
+        }
+        @include breakpoint(sp) {
+            display: flex;
+            justify-content: center;
+        }
+    }
+    &__img {
+        background-color: #252525;
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        @include breakpoint(sp) {
+            display: block;
+            &::before {
+                content: "Upload Avatar";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+            }
+            &:hover {
+                opacity: 1;
+            }
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .is-hover {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: rgba($color: #000000, $alpha: 0.7);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.7s;
+            &__handle {
+                // background-color: #FF0000;
+                cursor: pointer;
+                height: 30px;
+                // width: 120px;
+                padding: 0 15px;
+                border-radius: 5px;
+                display: block;
+                line-height: 30px;
+                color: #fff;
+                text-align: center;
+                font-size: 1.4rem;
+                letter-spacing: 0.54px;
+                margin-bottom: 15px;
+                outline: none;
+                &__delete {
+                    background-color: #c70039;
+                }
+                &__upload {
+                    background-color: #00917c;
+                }
+            }
+        }
+        &:hover {
+            .is-hover {
+                opacity: 1;
+            }
+        }
+    }
+    &__right {
+        flex: 1;
+        margin-left: 50px;
+        @include breakpoint(pro) {
+            margin-left: 35px;
+        }
+        @include breakpoint(tab) {
+            margin-left: unset;
+        }
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba($color: black, $alpha: 0.5);
+    }
+    .c-form {
+        width: 100%;
+        background-color: transparent;
+        padding: unset;
+        &__group {
+            background: transparent;
+            border-bottom: 1px solid gray;
+            padding: 0;
+            position: relative;
+            // background-color: rgba($color: $bgBold, $alpha: 0.5);
+            &.is-focus {
+                label {
+                    font-size: 1.1rem;
+                    top: 12px;
+                }
+            }
+        }
+        &__label {
+            font-size: 1.4rem;
+            color: white;
+            transition: all 0.3s ease;
+            @include breakpoint(tab) {
+                font-size: 1.2rem;
+            }
+        }
+        &__input {
+            color: #ffffff;
+        }
+        &__input:focus + .c-form__label {
+            font-size: 1.1rem;
+            @include breakpoint(tab) {
+                font-size: 1rem;
+            }
+        }
+        &__input:valid + .c-form__label {
+            font-size: 1.1rem;
+
+            @include breakpoint(tab) {
+                font-size: 1rem;
+            }
+        }
+        .c-btn {
+            width: 100%;
+            border: none;
+            background-color: $bgBold;
+            color: white;
+            border-radius: 30px / 30px;
+            transition: background-color 0.8s ease;
+            letter-spacing: 0.54px;
+            margin-top: 40px;
+            @include breakpoint(tab) {
+                height: 40px;
+                margin-top: 30px;
+            }
+            @include breakpoint(sp) {
+                font-size: 1.2rem;
+            }
+            &:hover {
+                background-color: $mainColor;
+            }
+        }
+    }
+}

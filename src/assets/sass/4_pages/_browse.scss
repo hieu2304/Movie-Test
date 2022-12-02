@@ -1,0 +1,45 @@
+.p-browse {
+    min-height: 100vh;
+    background-color: $bgBold;
+    padding: 150px 0 100px;
+    @include breakpoint(pro) {
+        padding: 100px 0;
+    }
+    @include breakpoint(tab) {
+        padding: 100px 0;
+    }
+    @include breakpoint(sp) {
+        padding: 100px 0;
+    }
+    &__title {
+        margin-bottom: 50px;
+    }
+    &__content {
+        margin-left: -10px;
+        margin-right: -10px;
+        @include breakpoint(tab) {
+            margin-left: 0;
+            margin-right: 0;
+        }
+        &__item {
+            width: calc(100% / 5);
+            padding: 0 10px;
+            margin-bottom: 20px;
+            @include breakpoint(pro) {
+                width: calc(100% / 4);
+            }
+            @include breakpoint(tab) {
+                width: calc(100% / 2);
+            }
+            @include breakpoint(sp) {
+                width: 100%;
+            }
+        }
+    }
+}
+.c-btn.c-btn--loadmore {
+    width: 300px;
+    height: 50px;
+    border-radius: 2px;
+    margin: 100px auto 50px;
+}
